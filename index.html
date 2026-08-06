@@ -10,7 +10,19 @@
 <meta property="og:url" content="https://gettingthingston.nl/">
 <meta property="og:image" content="https://gettingthingston.nl/avatar-512.png">
 <meta property="og:type" content="website">
+<link rel="canonical" href="https://gettingthingston.nl/">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ton Bosma",
+  "jobTitle": "Freelance Software Architect",
+  "url": "https://gettingthingston.nl/",
+  "worksFor": { "@type": "Organization", "name": "Getting Things Ton" },
+  "sameAs": ["https://www.linkedin.com/in/ton-bosma-07468b111/"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
@@ -82,6 +94,15 @@
     visibility: visible;
   }
 
+  .tagline {
+    font-family: system-ui, sans-serif;
+    font-size: 1.9vw;
+    line-height: 1.5;
+    color: #9a9a9a;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.8vw;
+  }
+
   .contact a {
     font-family: system-ui, sans-serif;
     font-size: 2.6vw;
@@ -122,8 +143,9 @@
 </div>
 
 <main>
-  <button class="wordmark" id="wordmark" aria-expanded="false" aria-controls="contact">Getting Things Ton</button>
+  <h1><button class="wordmark" id="wordmark" aria-expanded="false" aria-controls="contact">Getting Things Ton</button></h1>
   <nav class="contact" id="contact">
+    <p class="tagline">Freelance hands-on software-architect.<br>Simpele, robuuste, effectieve oplossingen.</p>
     <a id="email" href="#">e-mail</a>
     <a id="linkedin" href="#" hidden>LinkedIn</a>
   </nav>
