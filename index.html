@@ -22,7 +22,7 @@
   "jobTitle": "Freelance Software Architect",
   "url": "https://gettingthingston.nl/",
   "worksFor": { "@type": "Organization", "name": "Getting Things Ton" },
-  "sameAs": ["https://www.linkedin.com/in/ton-bosma-07468b111/"]
+  "sameAs": ["https://www.linkedin.com/in/gettingthingston/"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -160,38 +160,16 @@
   <nav class="contact" id="contact">
     <div class="contact-slide">
       <p class="tagline">Freelance hands-on software-architect.<br>Simpele, robuuste, effectieve oplossingen.</p>
-      <a id="email" href="#">e-mail</a>
-      <a id="linkedin" href="#" hidden>LinkedIn</a>
+      <a href="https://www.linkedin.com/in/gettingthingston/">LinkedIn</a>
     </div>
   </nav>
 </main>
 
 <script>
-  var LINKEDIN_URL = "https://www.linkedin.com/in/ton-bosma-07468b111/";
-
   var wordmark = document.getElementById('wordmark');
-  var emailLink = document.getElementById('email');
-  var linkedinLink = document.getElementById('linkedin');
-  var emailSet = false;
-
-  if (LINKEDIN_URL) {
-    linkedinLink.href = LINKEDIN_URL;
-    linkedinLink.hidden = false;
-  }
-
   wordmark.addEventListener('click', function () {
     var open = document.body.classList.toggle('open');
     wordmark.setAttribute('aria-expanded', open);
-
-    // E-mailadres pas na klik samenstellen, zodat het nooit
-    // als leesbare tekst in de HTML-bron staat (anti-spam-harvester).
-    if (open && !emailSet) {
-      var d = ['info', 'gettingthingston', 'nl'];
-      var adres = d[0] + '@' + d[1] + '.' + d[2];
-      emailLink.href = 'mailto:' + adres;
-      emailLink.textContent = adres;
-      emailSet = true;
-    }
   });
 </script>
 
