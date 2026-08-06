@@ -81,24 +81,30 @@
   }
 
   /* Dichtgeklapt neemt het blok geen ruimte in (max-height 0), zodat de
-     naam exact gecentreerd staat; uitklappen schuift de naam omhoog. */
+     naam exact gecentreerd staat; uitklappen schuift de naam omhoog.
+     De inhoud start boven de maskerrand (achter de titel) en glijdt
+     bij openen naar beneden het zicht in. */
   .contact {
-    display: flex;
-    flex-direction: column;
-    gap: 1.4vw;
     margin-top: 0;
     max-height: 0;
     overflow: hidden;
-    opacity: 0;
     visibility: hidden;
-    transition: max-height 0.4s ease, margin-top 0.4s ease,
-                opacity 0.4s ease, visibility 0.4s;
+    transition: max-height 0.55s ease, margin-top 0.55s ease, visibility 0.55s;
   }
   body.open .contact {
     margin-top: 2.5vw;
     max-height: 20vw;
-    opacity: 1;
     visibility: visible;
+  }
+  .contact-slide {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4vw;
+    transform: translateY(-110%);
+    transition: transform 0.55s ease;
+  }
+  body.open .contact-slide {
+    transform: translateY(0);
   }
 
   .tagline {
@@ -152,9 +158,11 @@
 <main>
   <h1><button class="wordmark" id="wordmark" aria-expanded="false" aria-controls="contact">Getting Things Ton</button></h1>
   <nav class="contact" id="contact">
-    <p class="tagline">Freelance hands-on software-architect.<br>Simpele, robuuste, effectieve oplossingen.</p>
-    <a id="email" href="#">e-mail</a>
-    <a id="linkedin" href="#" hidden>LinkedIn</a>
+    <div class="contact-slide">
+      <p class="tagline">Freelance hands-on software-architect.<br>Simpele, robuuste, effectieve oplossingen.</p>
+      <a id="email" href="#">e-mail</a>
+      <a id="linkedin" href="#" hidden>LinkedIn</a>
+    </div>
   </nav>
 </main>
 
