@@ -80,19 +80,24 @@
     outline-offset: 1vw;
   }
 
+  /* Dichtgeklapt neemt het blok geen ruimte in (max-height 0), zodat de
+     naam exact gecentreerd staat; uitklappen schuift de naam omhoog. */
   .contact {
     display: flex;
     flex-direction: column;
     gap: 1.4vw;
-    margin-top: 2.5vw;
+    margin-top: 0;
+    max-height: 0;
+    overflow: hidden;
     opacity: 0;
-    transform: translateY(-1vw);
     visibility: hidden;
-    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    transition: max-height 0.4s ease, margin-top 0.4s ease,
+                opacity 0.4s ease, visibility 0.4s;
   }
   body.open .contact {
+    margin-top: 2.5vw;
+    max-height: 20vw;
     opacity: 1;
-    transform: translateY(0);
     visibility: visible;
   }
 
